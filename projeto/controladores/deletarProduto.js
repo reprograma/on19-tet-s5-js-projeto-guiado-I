@@ -7,19 +7,16 @@ const { database } = require("../database");
 const { listarPorId } = require("./listarPorId")
 
 const deletarProduto = () => {
-  //console.log("Digite um id de um produto para deletar");
-  //const idSelecionado = readline.question();
-
+  
   let rightProd = false
   let temp
   let indexProd
   while (! rightProd){
 
     console.clear()
-    indexProd = listarPorId();
+    indexProd = listarPorId("deletar");
 
-    console.log ("Este produto que deseja remover?")
-    console.log ("(s/n)")
+    console.log ("Este produto que deseja remover? (s/n)")
     temp = readline.question()
     if (temp == 's'){
       rightProd = true
@@ -33,7 +30,7 @@ if (confirmation == database[indexProd].nome){
   console.log ("\nProduto removido do sistema\n")
 }
 else {
-  console.log ("Confirmação para remoção do produto negada")
+  console.log ("\nConfirmação para remoção do produto negada\n")
 }
 
   console.log("Dê enter para continuar");

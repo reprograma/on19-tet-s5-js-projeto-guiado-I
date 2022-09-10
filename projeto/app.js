@@ -6,6 +6,7 @@ const { inserirProduto } = require("./controladores/inserirProduto");
 const { listarPorId } = require("./controladores/listarPorId");
 const { listarTudo } = require("./controladores/listarTudo");
 const readline = require("readline-sync");
+const { receita } = require("./controladores/receita");
 
 const inicial = () => {
   
@@ -18,8 +19,9 @@ const inicial = () => {
   4 - Alterar um produto por Id
   5 - Aplicar aumento a todos os preços
   6 - Excluir um produto por Id
-  7 - Outras opções
-  8 - SAIR
+  7 - Receita
+  8 - Outras opções
+  9 - SAIR
   Digite de 1 até 7 para escolher uma opção:
   `);
   
@@ -57,11 +59,16 @@ const inicial = () => {
       break;
 
     case "7":
-      console.log("Não há (opcional extra, compre o plus)");
+      receita();
       inicial();
       break;
 
     case "8":
+      console.log("Não há (opcional extra, compre o plus)");
+      inicial();
+      break;
+
+    case "9":
       console.clear()
       console.log("Obrigada, volte sempre!");
       break;

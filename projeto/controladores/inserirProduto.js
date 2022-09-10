@@ -25,11 +25,20 @@ const inserirProduto = () => {
   console.log ("Digite o fornecedor do produto:")
   const supplier = readline.question()
 
-  database.push ({id: incrementalId, nome: name, preco: price, quantidade: quantity, marca: brand, fornecedor: supplier})
-  const newProduct = database[database.length-1]
+  const newProduct = {id: incrementalId, nome: name, preco: price, quantidade: quantity, marca: brand, fornecedor: supplier}
   console.table (newProduct)
+  console.log ("O item está correto? (s/n)")
+  const confirmation = readline.question()
+  
+  if (confirmation == "s"){
+    database.push ({id: incrementalId, nome: name, preco: price, quantidade: quantity, marca: brand, fornecedor: supplier})
+    console.log ('\nProduto cadastrado com sucesso')
+    incrementalId++
+  }
+  else {
+    console.log ("\nProduto não cadastrado")
+  }
 
-  incrementalId++
   console.log("Dê enter para continuar");
   readline.question();
 }

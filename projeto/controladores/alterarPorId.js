@@ -13,17 +13,13 @@ const alterarPorId = () => {
   let temp
   let indexProd
   while (! rightProd){
-    //console.log("Digite um id de um produto para alterar");
-    //const idSelecionado = readline.question();
-    //console.log("Você selecionou o id: " + idSelecionado);
 
     console.clear()
-    indexProd = listarPorId();
+    indexProd = listarPorId("alterar");
 
-    console.log ("Este produto que deseja alterar?")
-    console.log ("(s/n)")
+    console.log ("Este produto que deseja alterar? (s/n)")
     temp = readline.question()
-    if (temp == 's'){
+    if (temp == 's' || temp == ""){
       rightProd = true
     } 
   }
