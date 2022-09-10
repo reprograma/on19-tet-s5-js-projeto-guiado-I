@@ -8,6 +8,9 @@ const { listarTudo } = require("./controladores/listarTudo");
 const readline = require("readline-sync");
 
 const inicial = () => {
+  
+  console.clear();
+
   console.log(`====================== Menu ========================
   1 - Listar todos os produtos
   2 - Ver detalhes de um produto por Id
@@ -19,9 +22,8 @@ const inicial = () => {
   8 - SAIR
   Digite de 1 até 7 para escolher uma opção:
   `);
+  
   const resposta = readline.question();
-
-  console.clear();
 
   switch (resposta) {
     case "1":
@@ -60,6 +62,7 @@ const inicial = () => {
       break;
 
     case "8":
+      console.clear()
       console.log("Obrigada, volte sempre!");
       break;
 
