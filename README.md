@@ -4,79 +4,106 @@
 
 # Tema da Aula
 
-Turma Online 19 - Todas em Tech  | Back-end | Semana 5 | 2022 | Professora X
+Turma Online 19 - Todas em Tech  | Back-end | Semana 4 | 2022 | Professora Giu
 
-### Instruções
+## Instruções
+
 Antes de começar, vamos organizar nosso setup.
-* Fork esse repositório 
+
+* Fork esse repositório
 * Clone o fork na sua máquina (Para isso basta abrir o seu terminal e digitar `git clone url-do-seu-repositorio-forkado`)
 * Entre na pasta do seu repositório (Para isso basta abrir o seu terminal e digitar `cd nome-do-seu-repositorio-forkado`)
-* [Add outras intrucoes caso necessario]
 
-### Resumo
-O que veremos na aula de hoje?
-* [Tema1](#tema1)
-* [Tema2](#tema2)
-* [Tema3](#tema3)
+## Resumo
+
+Revisitaremos:
+
+### 1) Primeiro projeto
+
+Veremos o que precisaremos desenvolver no nosso primeiro projeto.
+
+### 2) Revisão focada
+
+* Estruturas de dados e Operadores
+* Funções
+* Estrutura condicional
+* Estrutura de repetição
+* Loops e iterações
 
 ## Conteúdo
-### Tema1 
-1. [Tópico 1](#topico1)
-2. [Tópico 2](#topico2)
-### Tema2 
-1. [Tópico 3](#topico3)
-   * [Subtópico 1](#subtopico1)
-   * [Subtópico 2](#subtopico2)
-   
-### Tema3
-1. [Tópico 4](#topico4)
 
-### Tema1 
+### Projeto controle de estoque
 
-#### Topico1
+#### Como criar o projeto
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo nibh, tempus sed rhoncus et, ultrices vitae orci. Donec erat mauris, laoreet in tortor vel, eleifend suscipit nibh. Mauris pharetra dui quis turpis rutrum blandit. Nunc tempor libero tortor, ac commodo erat porttitor ut. Donec vitae orci arcu. Nunc felis mi, maximus a turpis a, mollis pulvinar enim. Vivamus aliquam ante dui, a blandit massa rutrum et. Etiam hendrerit gravida ultrices. Nunc ante massa, dictum eget justo eget, feugiat tincidunt metus.
+Siga os passos abaixo:
 
- #### Topico2
-  - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  - Donec erat mauris, laoreet in tortor vel
-  - Nunc ante massa, dictum eget justo eget, feugiat tincidunt.
+| Passo | Comando |
+| - | - |
+| Inicie um projeto node | `npm init` |
+| Instale a dependência | `npm i readline-sync` |
+| No package.json, adicione em scripts   | `"ControleEstoque": "node app.js"` |
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo nibh, tempus sed rhoncus et, ultrices vitae orci. Donec erat mauris, laoreet in tortor vel, eleifend suscipit nibh. Mauris pharetra dui quis turpis rutrum blandit.
+#### Sobre o projeto
 
-### Tema2
-#### Topico3
-* [Subtópico 1](#subtopico1)
-* [Subtópico 2](#subtopico2)
-<br>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo nibh, tempus sed rhoncus et, ultrices vitae orci. Donec erat mauris, laoreet in tortor vel.
-<br>
+Este será um projeto de programa de linha de comando que
+fará o controle de estoque de produtos de uma loja.
 
-##### Subtopico1
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo nibh, tempus sed rhoncus et, ultrices vitae orci. Donec erat mauris, laoreet in tortor vel.
+O banco de dados será ***apenas em memória***, ou seja, as informações ***não persistirão*** após o encerramento do sistema.
 
-##### Subtopico2
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo nibh, tempus sed rhoncus et, ultrices vitae orci. Donec erat mauris, laoreet in tortor vel.
+Deverá ser implementado um CRUD (create, read, update, delete) para o bando de dados proposto.
 
-### Tema3
-#### Topico4
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo nibh, tempus sed rhoncus et, ultrices vitae orci. Donec erat mauris, laoreet in tortor vel, eleifend suscipit nibh. Mauris pharetra dui quis turpis rutrum blandit. Nunc tempor libero tortor, ac commodo erat porttitor ut. Donec vitae orci arcu. Nunc felis mi, maximus a turpis a, mollis pulvinar enim. Vivamus aliquam ante dui, a blandit massa rutrum et. Etiam hendrerit gravida ultrices.
+Deverá ser possível: (requisitos do sistema)
 
-***
-### Exercícios 
-* [Exercicio para sala](/exercicios/para-sala/)
-* [Exercicio para casa](/exercicios/para-casa/)
+* inserir novos produtos (create)
+* listar todos os produtos (read)
+* listar os detalhes de um produto (read)
+* alterar um produto (update)
+* aplicar um aumento porcentual em todos os preços(update)
+* excluir um produto (delete)
 
-### Material da aula 
+#### Estrutura do projeto
 
-### Links Úteis
-- [Lorem Ipsum](https://www.lipsum.com/feed/html)
-- [Lorem Ipsum](https://www.lipsum.com/feed/html)
-- [Lorem Ipsum](https://www.lipsum.com/feed/html)
-- [Lorem Ipsum](https://www.lipsum.com/feed/html)
+```
+ 📁 projeto
+   |- 📁 controladores
+   |     |- 📄 alterarPorId.js
+   |     |- 📄 alterarPrecos.js
+   |     |- 📄 deletarProduto.js
+   |     |- 📄 inserirProduto.js
+   |     |- 📄 listarPorId.js
+   |     |- 📄 listarTudo.js
+   |- 📄 app.js
+   |- 📄 database.js
+   |- 📄 package-lock.json
+   |- 📄 package.json
+```
 
+#### Enviando o projeto
 
-<p align="center">
-Desenvolvido com :purple_heart:  
-</p>
+| Passo | Comando |
+| - | - |
+| 1 - Vá até a pasta correta | `\on19-tet-s5-js-projeto-guiado-I\projeto` |
+| 2 - Adicione os arquivos alterados   | `git add .` |
+| 3 - Faça o commit  | `git commit -m 'diga o que fez'` |
+| 4- Suba para seu repositório   | `git push -u origin main` |
+| Caso faça novas alterações, repita 1,2,3 e dê  | `git push` |
 
+Finalmente: Faça o Pull Request!
+
+## Links Úteis
+
+* [Documentação Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+* [JEP: explorador com exemplos](https://jep.vercel.app/)
+
+## Links da prof
+
+* [Todos os Links](https://giuzambot.bio.link/)
+* [LinkedIn](https://www.linkedin.com/in/giuzambot/)
+* [GitHub](https://github.com/giuzambot)
+
+<center>
+
+Desenvolvido com :purple_heart:
+
+</center>
