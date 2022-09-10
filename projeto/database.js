@@ -5,7 +5,7 @@ const database = [
     preco: 8.79,
     quantidade: 5,
     marca: "Coloral",
-    fornecedor: "Coloral SA"
+    fornecedor: "Coloral SA",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const database = [
     preco: 3.65,
     quantidade: 15,
     marca: "Dona Benta",
-    fornecedor: "Usina Benta"
+    fornecedor: "Usina Benta",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const database = [
     preco: 15.70,
     quantidade: 21,
     marca: "Granja Fifi",
-    fornecedor: "Granja Fifi LTDA"
+    fornecedor: "Granja Fifi LTDA",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const database = [
     preco: 4.33,
     quantidade: 33,
     marca: "Nenhuma",
-    fornecedor: "Seu João ME"
+    fornecedor: "Seu João ME",
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const database = [
     preco: 3.50,
     quantidade: 40,
     marca: "Pinga ni Min",
-    fornecedor: "Usina São João LTDA"
+    fornecedor: "Usina São João LTDA",
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const database = [
     preco: 2.79,
     quantidade: 200,
     marca: "Skol",
-    fornecedor: "Ambev"
+    fornecedor: "Ambev",
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ const database = [
     preco: 9.60,
     quantidade: 29,
     marca: "Tio Jão",
-    fornecedor: "Cooperativa Minastirit SA"
+    fornecedor: "Cooperativa Minastirit SA",
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ const database = [
     preco: 3.45,
     quantidade: 12,
     marca: "Borealis",
-    fornecedor: "Venenos e Corrosivos LDTA"
+    fornecedor: "Venenos e Corrosivos LDTA",
   }
 ];
 
