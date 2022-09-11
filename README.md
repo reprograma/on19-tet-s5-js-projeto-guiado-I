@@ -1,1 +1,1 @@
-altero todo o readme que ela pediu
+altero todo o readme que ela pediu.
