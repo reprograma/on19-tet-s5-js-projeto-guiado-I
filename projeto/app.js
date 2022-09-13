@@ -6,6 +6,8 @@ const { inserirProduto } = require("./controladores/inserirProduto");
 const { listarPorId } = require("./controladores/listarPorId");
 const { listarTudo } = require("./controladores/listarTudo");
 const readline = require("readline-sync");
+
+/* IMPLEMENTED FEATURES*/
 const { receita } = require("./controladores/receita");
 
 const inicial = () => {
