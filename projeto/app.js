@@ -1,4 +1,5 @@
 console.clear();
+const { verificaEstoque } = require("./controladores/verificaEstoque");
 const { alterarPorId } = require("./controladores/alterarPorId");
 const { alterarPrecos } = require("./controladores/alterarPrecos");
 const { deletarProduto } = require("./controladores/deletarProduto");
@@ -15,7 +16,7 @@ const inicial = () => {
   4 - Alterar um produto por Id
   5 - Aplicar aumento a todos os preços
   6 - Excluir um produto por Id
-  7 - Outras opções
+  7 - Verifica estoque
   8 - SAIR
   Digite de 1 até 7 para escolher uma opção:
   `);
@@ -55,7 +56,7 @@ const inicial = () => {
       break;
 
     case "7":
-      console.log("Não há (opcional extra, compre o plus)");
+      verificaEstoque();
       inicial();
       break;
 

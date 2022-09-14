@@ -8,14 +8,41 @@ const readline = require("readline-sync");
 const { database } = require("../database");
 
 const alterarPrecos = () => {
-  console.log("Qual porcentual deseja aplicar todos os produtos?");
-  const porcentual = readline.question();
-  console.log("Porcentual: " + porcentual);
-  console.log("Dê enter para voltar");
-  readline.question();
-  console.clear();
+    console.log("\n*****************************TELA DE REAJUSTE******************************")
+    const listParc = database.map(x =>{
+      return {
+        id: x.id,
+        name: x.nome,
+        preco: x.preco,
+        quantidade: x.quantidade
+        
+    }
+  });
+    console.table(listParc);
+    console.log("Informe um valor para aumento: ");
+    const percInformado = readline.question();
+    let perCentual = percInformado/100
+    readline.question();    
+    console.log("O percentual aplicado em cada produto será de:" + +percInformado + " % ");
+    const novoPreco = readline.question();
+    database.forEach(function(item) {
+    item.preco = +((item.preco * perCentual) + item.preco).toFixed(2);
+  });
+    console.log("\nReajuste realizado com sucesso!");
+    const listParc2 = database.map(x =>{
+      return {
+        id: x.id,
+        name: x.nome,
+        preco: x.preco,
+        quantidade: x.quantidade        
+    }
+  });
+       console.table(listParc2)
+       console.log("*****************CLIQUE NO ENTER PARA RETORNAR AO MENU******************");
+       readline.question();
+       console.clear();
 }
-
-module.exports = {
+   
+  module.exports = {
   alterarPrecos
 }
