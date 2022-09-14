@@ -5,14 +5,18 @@ const readline = require("readline-sync");
 const { database } = require("../database");
 
 const listarPorId = () => {
-  console.log("Qual produto deseja ver detalhes?");
-  const produtoIdSelecionado = readline.question();
-  console.log("Produto id selecionado: " + produtoIdSelecionado);
-  console.log("Dê enter para voltar");
+  console.log("************************** PORDUTOS POR ID ******************************")
+  console.log("\nDigite um id para verificar o nome do produto:\n");
+  const idSelecionado = readline.question();
+  console.log("\nPara o id selecionado, " + idSelecionado + " ,temos as seguintes informações: ");
+  const encontra = database.find(item => (item.id === +idSelecionado));
+  console.table(encontra);
+  console.log("***************** CLIQUE NO ENTER PARA VOLTAR AO MENU *******************")
   readline.question();
-  console.clear();
-}
+  console.clear(); 
 
-module.exports = {
+};
+ 
+  module.exports = {
   listarPorId
-}
+ }
