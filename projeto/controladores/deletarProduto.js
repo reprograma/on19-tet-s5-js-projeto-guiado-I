@@ -11,7 +11,7 @@ const deletarProduto = () => {
   console.log("Você selecionou o id: " + idSelecionado);
 
   const posicaoProduto = database.findIndex(produto => produto.id === idSelecionado);
-  console.table(database[posicaoProduto])
+  console.table("Nome do produto: " + database[posicaoProduto].nome)
 
   console.log("Deseja mesmo deletar esse produto? [1 - Sim 2 - Nao]")
   const confirmaDelete = readline.questionInt();
