@@ -8,13 +8,23 @@ const readline = require("readline-sync");
 const { database } = require("../database");
 
 const alterarPrecos = () => {
-  console.log("Qual porcentual deseja aplicar todos os produtos?");
-  const porcentual = readline.question();
-  console.log("Porcentual: " + porcentual);
-  console.log("Dê enter para voltar");
-  readline.question();
-  console.clear();
+  console.log("Qual percentual deseja aplicar em todos os produtos?");
+  const percentual = readline.questionInt();
+  console.log("\nPercentual: " + percentual +"%\n");
+
+  console.log("Deseja prosseguir com a alteração de valor?");
+  const resposta = readline.questionInt("\n[1- Sim, 2- Nao] \n");
+  
+  if (resposta === 1){
+    database.forEach(produto => produto.preco = Math.round((produto.preco / 100) * percentual)+ produto.preco);
+    console.table(database);     
+  }else{
+    console.log("Dê enter para voltar ao Menu");
+    readline.question();
+  }
 }
+
+console.clear();
 
 module.exports = {
   alterarPrecos
