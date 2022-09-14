@@ -5,14 +5,18 @@
 // quantidade
 const readline = require("readline-sync");
 const { database } = require("../database");
-
+ 
 const listarTudo = () => {
   console.table(database);
   console.log("Dê enter para voltar");
   readline.question();
-  console.clear();
 }
+console.table(database.map( database => ({id: database.id, nome: database.nome, 
+  preco: database.preco, quantidade: database.quantidade} )))
 
-module.exports = {
+  console.log("Dê enter para continuar");
+  readline.question();
+  console.clear();
+  module.exports = {
   listarTudo
 }

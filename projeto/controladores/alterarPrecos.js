@@ -15,7 +15,25 @@ const alterarPrecos = () => {
   readline.question();
   console.clear();
 }
+let porcentagem = Number.parseInt(porcentual);
+  porcentagem = 1 + porcentagem / 100;
+  for (let index = 0; index < database.length; index++) {
+    database[index].preco *= porcentagem;
 
+    }
+  console.log(
+      "tem certeza que deseja aplicar " + porcentual,
+      " % em todos os produtos? ");
+    const cond = readline.question("\n[1- Sim, 2- Nao] \n");
+       if (cond === "1") {
+          console.table(database);
+          console.log("\n Valores alterados com sucesso! ");
+    } 
+    console.log("Dê enter para voltar");
+    readline.question();
+    
+
+    console.clear();
 module.exports = {
   alterarPrecos
 }

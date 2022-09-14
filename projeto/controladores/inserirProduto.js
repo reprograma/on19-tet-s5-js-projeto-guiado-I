@@ -5,14 +5,17 @@ const readline = require("readline-sync");
 const { database } = require("../database");
 let incrementalId = 8;
 
-const inserirProduto = () => {
   console.log("Id atual: " + incrementalId);
   incrementalId++
-  console.log("Dê enter para voltar");
+  console.log("Insira os dados do produto")
   readline.question();
-  console.clear();
-}
+  const nome = readline.question("nome:");
+  const preco = readline.question("preco:");
+  const quantidade = readline.question("quantidade:");
+  const marca = readline.question("marca:");
+  const fornecedor = readline.question("fornecedor:");
+  const newProduto = {id: incrementalId, nome, preco, quantidade, marca, fornecedor};
+  database.push(newProduto);
+  console.table(database);
 
-module.exports = {
-  inserirProduto
-}
+
