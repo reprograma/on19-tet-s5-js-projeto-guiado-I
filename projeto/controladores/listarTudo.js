@@ -7,7 +7,16 @@ const readline = require("readline-sync");
 const { database } = require("../database");
 
 const listarTudo = () => {
-  console.table(database);
+  const listParc = database.map(prod =>{
+    return {
+      id: prod.id,
+      name: prod.nome,
+      preco: prod.preco,
+      quantidade: prod.quantidade
+      
+  }
+});
+  console.table(listParc);
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();
@@ -16,3 +25,4 @@ const listarTudo = () => {
 module.exports = {
   listarTudo
 }
+ //usar map
