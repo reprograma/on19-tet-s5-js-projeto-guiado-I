@@ -12,7 +12,7 @@ const alterarPrecos = () => {
   const porcentual = readline.question();
   console.log("Porcentual: " + porcentual);
   console.log("Qual porcentual deseja aplicar a todos os produtos?");
-  let porcentual = readline.question();
+  porcentual = readline.question();
   console.log("Porcentual de aumento: " + porcentual);
   console.log(`Você realmente quer aplicar o aumento de ${porcentual}%?`);
   const confirmar = readline.question(`Para confirmar a aplicação do porcentual de aumento, digite 1 
@@ -27,11 +27,11 @@ const alterarPrecos = () => {
   resposta();
   console.clear();
 
-  console.log("Dê enter para voltar");
+  console.log("Dê enter para voltar"); 
   readline.question();
   console.clear();
 }
 
-module.exports = {
+  module.exports = {
   alterarPrecos
 }
