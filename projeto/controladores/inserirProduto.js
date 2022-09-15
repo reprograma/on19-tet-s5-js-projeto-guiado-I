@@ -18,9 +18,9 @@ const inserirProduto = () => {
   const novoProduto = { id:incrementalId, nome, preco, quantidade, marca, fornecedor };
 
   database.push(novoProduto); //aqui é dizendo para o programa adicionar um novo produto no banco de dados, a partir da const novoproduto.
-  console.table(database);
+  console.table(database); //aqui para apresentar o resultado junto com a tabela.
 
-  console.log("Deseja inserir mais produtos? ")
+  console.log("Deseja inserir mais produtos? ") //essa parte pode repetir se quiser e ir adaptando.
   const resposta = readline.questionInt("\n[1- Sim, 2- Nao] \n");
   if (resposta === 1){
     inserirProduto()

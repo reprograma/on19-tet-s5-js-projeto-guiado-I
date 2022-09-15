@@ -7,7 +7,7 @@ const readline = require("readline-sync");
 const { database } = require("../database");
 
 const listarTudo = () => {
-  const listaItens = database.map( //o map é para fazer o loop entre os produtos e fazer a listagem completa.
+  const listaItens = database.map( //o map é para fazer o loop entre os produtos e fazer a listagem completa. essa é a teoricamente fácil.
 
     (produto) => {
       const listado = {
