@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "ControleEstoque": "node ./app.js"
   },
-  "author": "GiuZambot",
+  "author": "LilianeGomes",
   "license": "MIT",
   "dependencies": {
     "readline-sync": "^1.4.10"
