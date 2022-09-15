@@ -7,8 +7,12 @@ const { database } = require("../database");
 const listarPorId = () => {
   console.log("Qual produto deseja ver detalhes?");
   const produtoIdSelecionado = readline.question();
+  const ProdutoEncontrado =
+  database.find(Prod => Prod.id == produtoIdSelecionado)
   console.log("Produto id selecionado: " + produtoIdSelecionado);
+  console.table(ProdutoEncontrado)
   console.log("Dê enter para voltar");
+
   readline.question();
   console.clear();
 }
