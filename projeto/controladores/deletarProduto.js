@@ -9,9 +9,23 @@ const deletarProduto = () => {
   console.log("Digite um id de um produto para deletar");
   const idSelecionado = readline.question();
   console.log("Você selecionou o id: " + idSelecionado);
+  const novoArray = database.findIndex(index => index.id == idSelecionado)
+  console.log("Voce realmente deseja cancelar? SIM ou NAO?") 
+  const pergunta = readline.question().toLowerCase();
+  console.log(pergunta)
+  if(pergunta == "sim"){
+    database.splice(novoArray , 1);
+    console.table(database)
+    console.log("Dê enter para voltar");
+    readline.question();
+    console.clear();
+  } else {
+  console.log("Ufaa que bom!");
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();
+  }
+  
 }
 
 module.exports = {

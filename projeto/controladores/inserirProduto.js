@@ -8,10 +8,39 @@ let incrementalId = 8;
 const inserirProduto = () => {
   console.log("Id atual: " + incrementalId);
   incrementalId++
-  console.log("Dê enter para voltar");
-  readline.question();
-  console.clear();
-}
+
+    console.log("Informe o nome do produto: ")
+    const nome = readline.question();
+
+    console.log("Informe o nome do preco: ")
+    const preco = readline.question();
+
+    console.log("Informe o nome do quantidade: ")
+    const quantidade = readline.question();
+
+    console.log("Informe o nome do marca: ")
+    const marca = readline.question();
+
+    console.log("Informe o nome do fornecedor: ")
+    const fornecedor = readline.question();
+
+    const novoproduto = {
+      id: incrementalId,
+      nome: nome,
+      preco: +preco,
+      marca: marca,
+      quantidade: +quantidade,
+      fornecedor: fornecedor,
+    }
+
+    database.push(novoproduto)
+    console.table(database)
+    console.log("Dê enter para voltar");
+    readline.question();
+    console.clear();
+
+  }
+
 
 module.exports = {
   inserirProduto

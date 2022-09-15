@@ -11,6 +11,11 @@ const alterarPrecos = () => {
   console.log("Qual porcentual deseja aplicar todos os produtos?");
   const porcentual = readline.question();
   console.log("Porcentual: " + porcentual);
+  let porcentagem = +porcentual
+  porcentagem = porcentagem / 100
+  database.forEach(index => index.preco = index.preco + (index.preco * porcentagem))
+  database.forEach(index => index.preco = +index.preco.toFixed(2))
+  console.table(database)
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();
