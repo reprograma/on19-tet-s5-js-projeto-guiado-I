@@ -31,7 +31,6 @@ const deletarProduto = () => {
   console.clear();
 }
 
-
 module.exports = {
   deletarProduto
 }

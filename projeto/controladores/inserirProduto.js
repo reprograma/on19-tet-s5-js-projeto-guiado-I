@@ -29,7 +29,6 @@ const inserirProduto = () => {
   console.clear();
 }
 
-inserirProduto();
 module.exports = {
   inserirPorId
 }
