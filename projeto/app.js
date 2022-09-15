@@ -7,7 +7,9 @@ const { listarPorId } = require("./controladores/listarPorId");
 const { listarTudo } = require("./controladores/listarTudo");
 const readline = require("readline-sync");
 
+
 const inicial = () => {
+
   console.log(`====================== Menu ========================
   1 - Listar todos os produtos
   2 - Ver detalhes de um produto por Id
@@ -69,5 +71,6 @@ const inicial = () => {
       break;
   }
 }
+
 
 inicial();
