@@ -8,13 +8,26 @@ const { database } = require("../database");
 
 const alterarPorId = () => {
   console.log("Digite um id de um produto para alterar");
-  const idSelecionado = readline.question();
+  const idSelecionado = readline.questionInt("ID: ");
   console.log("Você selecionou o id: " + idSelecionado);
-  console.log("Dê enter para voltar");
-  readline.question();
-  console.clear();
-}
+
+  const indexProdU = database.findIndex(
+    x => x.id === idSelecionado
+  );
+
+  const updateProd = {
+    id: idSelecionado,
+    nome: readline.question("Novo NOME do produto: "),
+    preco: readline.questionFloat("Novo PRECO do produto:"),
+    quantidade: readline.questionFloat("Nova QUANTIDADE do produto: "),
+    marca: readline.question("Nova MARCA do produto: "),
+    fornecedor: readline.question("Novo FORNECEDOR do produto: "),
+  };
+
+  database.splice(indexProdU, 1, updateProd);
+  console.table(database);
+};
 
 module.exports = {
-  alterarPorId
-}
+  alterarPorId,
+};
