@@ -1,15 +1,11 @@
 {
   "name": "controle_estoque",
   "version": "1.0.0",
-  "description": "Controle de estoque",
+  "description": "API - Controle de Estoque",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "ControleEstoque": "node ./app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mellyssa Stephanny",
-  "license": "MIT",
-  "dependencies": {
-    "readline-sync": "^1.4.10"
-  }
+  "license": "MIT"
 }
