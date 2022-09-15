@@ -11,6 +11,18 @@ const alterarPrecos = () => {
   console.log("Qual porcentual deseja aplicar todos os produtos?");
   const porcentual = readline.question();
   console.log("Porcentual: " + porcentual);
+  console.log ("Deseja realmente aplicar esse percentual?[1- Sim, 2-Não]");
+  const resultado1 = readline.question();
+  const porcentual2 = porcentual / 100 + 1;
+  let novoData2 = database.map((produto, i, database) => database[i] = { ...produto, preco: +((produto.preco * porcentual2).toFixed(2)) });
+  if (resultado1 === "1") {
+    console.table(novoData2)
+  } else {
+    console.log("Dê enter para voltar");
+  readline.question();
+    
+  }
+  
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();
@@ -19,3 +31,5 @@ const alterarPrecos = () => {
 module.exports = {
   alterarPrecos
 }
+
+
