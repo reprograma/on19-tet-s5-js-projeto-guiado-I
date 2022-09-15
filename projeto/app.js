@@ -19,7 +19,7 @@ const inicial = () => {
   8 - SAIR
   Digite de 1 até 7 para escolher uma opção:
   `);
-  const resposta = readline.question();
+  const resposta = readline.question(); // sempre que quiser perguntar joga o readline
 
   console.clear();
 
