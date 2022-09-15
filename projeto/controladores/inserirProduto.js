@@ -8,6 +8,20 @@ let incrementalId = 8;
 const inserirProduto = () => {
   console.log("Id atual: " + incrementalId);
   incrementalId++
+
+
+  console.log("Insira os dados do produto")
+
+  const nome = readline.question('Nome:')
+  const preco = readline.questionInt('Preco:')
+  const quantidade = readline.questionInt('Quantidade:') 
+  const marca = readline.question('Marca:')
+  const fornecedor = readline.question('Fornecedor:')
+
+  const novoProduto = {id:incrementalId,nome, preco, quantidade, marca, fornecedor} 
+  database.push(novoProduto)
+  console.table(database)
+
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();
