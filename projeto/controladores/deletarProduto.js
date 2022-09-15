@@ -6,14 +6,35 @@ const readline = require("readline-sync");
 const { database } = require("../database");
 
 const deletarProduto = () => {
-  console.log("Digite um id de um produto para deletar");
+  console.log("Digite um id de um produto para EXCLUIR");
   const idSelecionado = readline.question();
-  console.log("Você selecionou o id: " + idSelecionado);
-  console.log("Dê enter para voltar");
-  readline.question();
-  console.clear();
-}
+
+  const posicaoDeletada = database.findIndex(database => database.id === +idSelecionado); 
+
+  const itemCompleto = database.find(database => database.id === +idSelecionado);
+  console.log("Produto a ser excluido: " + idSelecionado + " - " + itemCompleto.nome);
+  
+  console.log("Tem certeza que deseja excluir esse produto?")
+  const deletou = readline.question();
+
+  if (deletou.toLowerCase() == "sim") {
+    database.splice(posicaoDeletada, 1);
+    console.log("O produto foi excluido com sucesso.")
+    console.table(database);
+    console.log("Dê enter para voltar");
+    readline.question();
+    console.clear();
+
+  } else {
+    console.log("Tudo bem, não excluirei nenhum produto. Até a proxima :)");
+    console.log("Dê enter para voltar");
+    readline.question();
+    console.clear();
+  }
+};
 
 module.exports = {
   deletarProduto
 }
+
+

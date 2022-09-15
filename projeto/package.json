@@ -11,5 +11,13 @@
   "license": "MIT",
   "dependencies": {
     "readline-sync": "^1.4.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AuroraSilva/on19-tet-s5-js-projeto-guiado-I.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AuroraSilva/on19-tet-s5-js-projeto-guiado-I/issues"
+  },
+  "homepage": "https://github.com/AuroraSilva/on19-tet-s5-js-projeto-guiado-I#readme"
 }
