@@ -1,0 +1,23 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "Controle de estoque",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ControleEstoque": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MargarethGalmier/on19-tet-s5-js-projeto-guiado-I.git"
+  },
+  "author": "MargarethGalmier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MargarethGalmier/on19-tet-s5-js-projeto-guiado-I/issues"
+  },
+  "homepage": "https://github.com/MargarethGalmier/on19-tet-s5-js-projeto-guiado-I#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
