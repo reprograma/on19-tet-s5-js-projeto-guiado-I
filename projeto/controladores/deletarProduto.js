@@ -9,7 +9,16 @@ const deletarProduto = () => {
   console.log("Digite um id de um produto para deletar");
   const idSelecionado = readline.question();
   console.log("Você selecionou o id: " + idSelecionado);
-  console.log("Dê enter para voltar");
+  const prodSelecionado = database.findIndex(database => (database.id === idSelecionado));
+  console.log("Deseja realmente fazer isso?[1-Sim, 2-Não]");
+  const resultado = readline.question();
+  if(resultado === "1"){
+    database.splice(prodSelecionado, 1);
+    console.table(database);
+  }else{
+    console.log("Dê enter para voltar");
+  }
+  
   readline.question();
   console.clear();
 }
