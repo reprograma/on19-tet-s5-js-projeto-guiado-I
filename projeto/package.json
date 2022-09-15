@@ -8,5 +8,8 @@
     "ControleEstoque": "node ./app.js"
   },
   "author": "Mellyssa Stephanny",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
