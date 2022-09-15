@@ -8,6 +8,8 @@ const listarPorId = () => {
   console.log("Qual produto deseja ver detalhes?");
   const produtoIdSelecionado = readline.question();
   console.log("Produto id selecionado: " + produtoIdSelecionado);
+  const detalhesIdSelecionado = database.find(item => item.id == produtoIdSelecionado);
+  console.table(detalhesIdSelecionado);
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();
