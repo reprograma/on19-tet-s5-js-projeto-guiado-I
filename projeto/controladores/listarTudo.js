@@ -3,14 +3,24 @@
 // nome
 // preco
 // quantidade
-const readline = require("readline-sync");
-const { database } = require("../database");
+const readline = require('readline-sync')
+const { database } = require('../database')
 
 const listarTudo = () => {
-  console.table(database);
-  console.log("Dê enter para voltar");
-  readline.question();
-  console.clear();
+  const novaLista = database.map(produto => {
+    const listaReduzida = {
+      id: produto.id,
+      nome: produto.nome,
+      preco: produto.preco,
+      qtd: produto.quantidade
+    }
+    return listaReduzida
+  })
+  console.table(novaLista)
+
+  console.log('Dê um ENTER para voltar ao Menu')
+  readline.question()
+  console.clear()
 }
 
 module.exports = {
