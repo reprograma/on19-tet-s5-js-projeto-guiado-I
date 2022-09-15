@@ -30,7 +30,7 @@ const inicial = () => {
   const resposta = readline.question();
 
   const index = veiculos.findIndex(value => value.id === resposta);
-  if (index === -1) {
+  if (index === 1) {
     console.log(("Não encontrei nada, Quer tentar de novo?"));
     const resposta2 = readline.question();
     if (resposta2 === "sim") {
