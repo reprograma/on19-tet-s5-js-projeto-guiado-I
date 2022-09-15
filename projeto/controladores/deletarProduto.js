@@ -6,17 +6,26 @@ const readline = require('readline-sync')
 const { database } = require('../database')
 
 const deletarProduto = () => {
-  console.log('Digite o id do produto para deletar')
+  console.log('Digite o id do produto que deseja deletar')
   const idSelecionado = readline.question()
   console.log('Você selecionou o id: ' + idSelecionado)
-  //console.log("Dê enter para voltar");
-  console.log('Tem certeza de que deseja deletar esse produto?[1-SIM, 2-NÃO]')
-  const cond = readline.question()
-  if (cond === '1') {
-    console.log('Produto removido da base de dados')
-  }
 
-  console.log('Dê um ENTER para voltar')
+  const encontraID = database.find(produto => produto.id === +idSelecionado)
+  console.log('O produto selecionado é:')
+  console.table(encontraID)
+  console.log('\n Tem certeza que deseja deletar este produto?[1-SIM, 2-NAO]')
+
+  const resposta = readline.question()
+  const novoDatabase = database
+  const novoDatabaseProd = novoDatabase.filter(
+    produto => produto.id !== +idSelecionado
+  )
+  if (resposta === '1') {
+    console.log('ID deletado!')
+    console.table(novoDatabaseProd)
+  } else {
+    console.log('\n Dê um ENTER para voltar ao Menu')
+  }
   readline.question()
   console.clear()
 }
