@@ -8,7 +8,15 @@ const { database } = require("../database");
 const deletarProduto = () => {
   console.log("Digite um id de um produto para deletar");
   const idSelecionado = readline.question();
+
   console.log("Você selecionou o id: " + idSelecionado);
+
+  console.log("Deseja realmente fazer isso? [1 - Sim, 2 - Não]");
+  const cond =  readline.question();
+  if (cond === "1"){
+    console.log("O Produto Selecionado foi deletado com sucesso");
+  }
+
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();
