@@ -8,6 +8,8 @@ const { database } = require("../database");
 
 const listarTudo = () => {
   console.table(database);
+
+  
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();
