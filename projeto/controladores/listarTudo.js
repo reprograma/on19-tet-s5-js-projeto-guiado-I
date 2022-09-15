@@ -7,7 +7,18 @@ const readline = require("readline-sync");
 const { database } = require("../database");
 
 const listarTudo = () => {
-  console.table(database);
+  const ListarTudo = database.map(m =>{
+    return {
+      id: m.id,
+      nome: m.nome,
+      preco: m.preco,
+      quantidade: m.quantidade
+
+    }
+  });
+  
+  console.table(ListarTudo);
+
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();

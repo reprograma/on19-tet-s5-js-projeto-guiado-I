@@ -9,6 +9,13 @@ const deletarProduto = () => {
   console.log("Digite um id de um produto para deletar");
   const idSelecionado = readline.question();
   console.log("Você selecionou o id: " + idSelecionado);
+
+  console.log ("Realmente deseja deletar este produto?[1 - sim, 2 - não]");
+  const DeletarProduto = readline.question();
+  if (DeletarProduto === "1"){
+    console.log("Produto deletado");
+
+  }
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();
