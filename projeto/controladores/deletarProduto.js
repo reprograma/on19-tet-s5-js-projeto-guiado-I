@@ -8,12 +8,28 @@ const { database } = require("../database");
 const deletarProduto = () => {
   console.log("Digite um id de um produto para deletar");
   const idSelecionado = readline.question();
-  console.log("Você selecionou o id: " + idSelecionado);
+
+  const indice = database.findIndex(database => database.id === +idSelecionado);
+  
+  const itemDeletado = database.find(database => database.id === +idSelecionado);
+  console.log("Você selecionou o id: " + idSelecionado + " - " + itemDeletado.nome);
+
+  console.log("Você realmente quer deletar o produto? [1 - Sim, 2 - Não]");
+  const condicao =  readline.question();
+  
+  if (condicao === "1") {
+    database.splice(indice, 1);
+    console.table(database);
+
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();
 }
-
+        
 module.exports = {
   deletarProduto
-}
+    }
+ };
+
+
+deletarProduto();
