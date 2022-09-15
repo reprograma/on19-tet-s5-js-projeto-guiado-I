@@ -7,12 +7,23 @@ const readline = require("readline-sync");
 const { database } = require("../database");
 
 const listarTudo = () => {
-  console.table(database);
+  const parcial = database.map(filtro => {
+    return {
+      id: filtro.id,
+      name: filtro.nome,
+      preco: filtro.preco,
+      quantidade: filtro.quantidade
+    }
+});
+  
+  console.table(parcial);
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();
-}
+};
 
 module.exports = {
   listarTudo
 }
+
+listarTudo();
