@@ -10,7 +10,14 @@ const { database } = require("../database");
 const alterarPrecos = () => {
   console.log("Qual porcentual deseja aplicar todos os produtos?");
   const porcentual = readline.question();
-  console.log("Porcentual: " + porcentual);
+  console.log("Porcentual: " + +porcentual);
+  console.log("\n Deseja realmente alterar os preços?  " );
+  const nPreco = readline.question();
+  if (nPreco.toLowerCase() === "sim") {
+   database.map((produto, i, arr) => arr[i] = { ...produto, preco: +((produto.preco * +porcentual).toFixed(2))})
+  };
+  console.table(database);
+
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();

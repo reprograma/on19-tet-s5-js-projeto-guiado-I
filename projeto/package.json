@@ -1,0 +1,15 @@
+{
+  "name": "controle-estoque",
+  "version": "1.0.0",
+  "description": "controle de estoque",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "controleEstoque": "node ./app.js"
+  },
+  "author": "RafaBeckss",
+  "license": "MIT",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
