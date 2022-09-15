@@ -6,8 +6,38 @@ const { database } = require("../database");
 let incrementalId = 8;
 
 const inserirProduto = () => {
-  console.log("Id atual: " + incrementalId);
+  console.log("ID atual: " + incrementalId);
   incrementalId++
+
+  console.log("Tem certeza que deseja incluir um item?");
+  const confirmaIncluir = readline.question();
+
+  if (confirmaIncluir.toLowerCase() === "sim") { 
+
+  console.log("Qual o nome do item a ser inserido?");
+  const productNome = readline.question();
+  console.log("Qual o preço desse produto?");
+  const productPreco = readline.question();
+  console.log("Quantas unidades estão disponíveis para oferta?");
+  const productUnid = readline.question();
+  console.log("Qual o nome da marca desse produto?");
+  const productMarca = readline.question();
+  console.log("Qual o nome do fornecedor?");
+  const productFornecedor = readline.question();
+
+  const newProduct = {
+    id: incrementalId,
+    nome: productNome,
+    preco: productPreco,
+    quantidade: productUnid,
+    marca: productMarca,
+    fornecedor: productFornecedor
+  }
+
+  database.push(newProduct);
+  console.log("Essa é a tabela de produtos atualizada com o novo item:");
+  console.table(database);}
+
   console.log("Dê enter para voltar");
   readline.question();
   console.clear();
