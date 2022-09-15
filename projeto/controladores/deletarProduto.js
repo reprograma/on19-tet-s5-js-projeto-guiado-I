@@ -9,7 +9,9 @@ const deletarProduto = () => {
   console.log("Digite um id de um produto para deletar");
   const idSelecionado = readline.question();
   console.log("Você selecionou o id: " + idSelecionado);
-  console.log("Tem certeza que você quer excluir o produto selecionado?");
+  console.log("Tem certeza que você quer excluir o produto selecionado?"); 
+  const nomeIdSelecionado = database.find(item => item.id == +idSelecionado);
+  console.log(nomeIdSelecionado.nome);
   const confirmar = readline.question(`Atencao: essa acao eh irreversivel
   Para confirmar a deletacao do produto, digite 1 
   Caso queira cancelar essa acao aperte enter `);
