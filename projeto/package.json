@@ -1,0 +1,22 @@
+{
+  "name": "controle-estoque",
+  "version": "1.0.0",
+  "description": "Controle de estoque",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ControleEstoque": "node ./app.js"
+  },
+  "keywords": [
+    "Node.Js",
+    "controle",
+    "estoque",
+    "CRUD",
+    "JavaScript"
+  ],
+  "author": "Elisângela Manuel",
+  "license": "MIT",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
