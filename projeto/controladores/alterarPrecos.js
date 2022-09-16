@@ -8,6 +8,12 @@ const readline = require("readline-sync");
 const { database } = require("../database");
 
 const alterarPrecos = () => {
+  
+  console.log("Gostaria de alterar o preço dos produtos?");
+  const confirmaAltPreco = readline.question();
+
+  if (confirmaAltPreco.toLowerCase() === "sim") {
+  
   console.log("Qual porcentual deseja aplicar em todos os produtos?");
   const porcentual = readline.question();
   console.log("O porcentual a ser acrescentador será de: " + porcentual + "%.");
@@ -22,7 +28,7 @@ const alterarPrecos = () => {
     }
   console.log("Esse é a tabela atualizada com os novos valores:");
   console.table(database)
-  } 
+  } }
 
   
   console.log("Dê enter para voltar");

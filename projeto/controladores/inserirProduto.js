@@ -9,7 +9,7 @@ const inserirProduto = () => {
   console.log("ID atual: " + incrementalId);
   incrementalId++
 
-  console.log("Tem certeza que deseja incluir um item?");
+  console.log("Gostaria de incluir um item?");
   const confirmaIncluir = readline.question();
 
   if (confirmaIncluir.toLowerCase() === "sim") { 
@@ -33,10 +33,14 @@ const inserirProduto = () => {
     marca: productMarca,
     fornecedor: productFornecedor
   }
+  console.clear();
+  console.log("Podemos incluir esse novo item?");
+  const confirmaIncluir = readline.question();
 
-  database.push(newProduct);
-  console.log("Essa é a tabela de produtos atualizada com o novo item:");
-  console.table(database);}
+    if (confirmaIncluir.toLowerCase() === "sim"){
+    database.push(newProduct);
+    console.log("Essa é a tabela de produtos atualizada com o novo item:");
+    console.table(database);}}
 
   console.log("Dê enter para voltar");
   readline.question();
