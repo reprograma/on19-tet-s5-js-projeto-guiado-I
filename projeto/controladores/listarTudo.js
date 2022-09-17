@@ -3,7 +3,8 @@
 // nome
 // preco
 // quantidade
-const readline = require("readline-sync");
+
+const readline = require("readline-sync");// aula quarta
 const { database } = require("../database");
 
 const listarTudo = () => {

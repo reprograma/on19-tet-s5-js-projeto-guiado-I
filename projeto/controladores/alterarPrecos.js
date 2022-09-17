@@ -4,7 +4,7 @@
 // Caso prossiga, aplique o porcentual em todos os produtos
 // Lembre que é necessário converter string para number vindo do terminal
 
-cconst readline = require("readline-sync");
+const readline = require("readline-sync");
 let { database } = require("../database");
 
 const alterarPrecos = () => {
