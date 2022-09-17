@@ -20,3 +20,4 @@ console.table(detalhesId);
 module.exports = {
   listarPorId
 }
+

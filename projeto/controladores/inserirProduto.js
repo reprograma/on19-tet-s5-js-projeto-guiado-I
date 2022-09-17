@@ -30,3 +30,4 @@ console.table(novoProduto);
 module.exports = {
   inserirProduto
 }
+

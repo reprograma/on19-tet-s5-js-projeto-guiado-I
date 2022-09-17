@@ -35,3 +35,4 @@ const deletarProduto = () => {
 module.exports = {
   deletarProduto
 }
+

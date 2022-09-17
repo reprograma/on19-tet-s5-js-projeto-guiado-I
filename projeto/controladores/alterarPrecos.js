@@ -19,3 +19,4 @@ const alterarPrecos = () => {
 module.exports = {
   alterarPrecos
 }
+
