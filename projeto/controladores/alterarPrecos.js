@@ -8,30 +8,22 @@ const readline = require("readline-sync");
 const { database } = require("../database");
 
 const alterarPrecos = () => {
-  console.log("Qual porcentual deseja aplicar todos os produtos?");
+  console.log("Qual porcentual deseja aplicar em todos os produtos?");
   const porcentual = readline.question();
-  console.log("Porcentual: " + porcentual);
-  console.log("Qual porcentual deseja aplicar a todos os produtos?");
-  porcentual = readline.question();
-  console.log("Porcentual de aumento: " + porcentual);
-  console.log(`Você realmente quer aplicar o aumento de ${porcentual}%?`);
-  const confirmar = readline.question(`Para confirmar a aplicação do porcentual de aumento, digite 1 
-  Caso queira cancelar essa ação, aperte enter `);
-  porcentual = +porcentual/100 + 1 
-  const alterarPreco = () => {
-    const aumentoPrecos = database.map((produto, i, database) => database[i] = {...produto, preco: + (produto.preco * +porcentual)});
-  }
-
-  const resposta = () => (confirmar == 1) ? alterarPreco() : readline.question(`Entendi.
-  Aperte Enter para manter o preço incial dos produtos `);
-  resposta();
-  console.clear();
-
-  console.log("Dê enter para voltar"); 
-  readline.question();
-  console.clear();
+  console.log(`\nVocê realmente quer aplicar o aumento de ${porcentual}% ?\n`);
+  const confirmar = readline.question(`Digite 1 para aplicar o aumento ou aperte Enter para retornar ao Menu Inicial\n`);
+  if (confirmar == '1') {
+    const tabela = database.map((produto, i) => database[i] = { ...produto, preco: +(produto.preco * (porcentual / 100 + 1.0)).toFixed(2)})
+    console.table(tabela);
+    
+    console.log("Dê enter para voltar"); 
+    readline.question();
+    console.clear();
+    
+  } else {
+    console.clear();
+    }
 }
-
-  module.exports = {
+module.exports = {
   alterarPrecos
 }
