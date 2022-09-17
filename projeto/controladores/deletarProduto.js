@@ -23,8 +23,8 @@ const deletarProduto = () => {
     }
   }
   
-  const resposta = () => (confirmar == 1) ? deletarProduto() : readline.question(`Voce escolheu cancelar a deletacao do produto
-  Agora aperte enter para manter inalterado o produto`);
+  const resposta = () => (confirmar == 1) ? deletarProduto() : readline.question(`Atencao: Apos a exclusao, nao tera como voltar atras, digite 1 
+  Caso queira cancelar essa acao aperte enter`);
   resposta();
   console.clear();
   
