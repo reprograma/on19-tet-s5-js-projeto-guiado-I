@@ -1,13 +1,17 @@
 {
   "name": "controle-estoque",
   "version": "1.0.0",
+  "description": "Controle de Estoque",
   "description": "Controle de estoque",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ControleEstoque": "node ./app.js"
   },
+
+  "author": "AnnaBarbosa",
   "author": "GiuZambot",
+
   "license": "MIT",
   "dependencies": {
     "readline-sync": "^1.4.10"

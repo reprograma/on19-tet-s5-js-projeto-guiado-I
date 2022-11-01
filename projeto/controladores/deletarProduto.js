@@ -9,7 +9,27 @@ const deletarProduto = () => {
   console.log("Digite um id de um produto para deletar");
   const idSelecionado = readline.question();
   console.log("Você selecionou o id: " + idSelecionado);
-  console.log("Dê enter para voltar");
+  console.log("Tem certeza que você quer excluir o produto selecionado?"); 
+  const nomeIdSelecionado = database.find(item => item.id == +idSelecionado);
+  console.log(nomeIdSelecionado.nome);
+  const confirmar = readline.question(`Atencao: Apos a exclusao, nao tera como voltar atras, digite 1 
+  Caso queira cancelar essa acao aperte enter `);
+   
+  const deletarProduto = () => {
+    const posicaoProduto = database.findIndex(item => item.id == idSelecionado);
+    if (posicaoProduto > -1) {
+      database.splice(posicaoProduto, 1);
+      deletarProduto();
+    }
+  }
+  
+  const resposta = () => (confirmar == 1) ? deletarProduto() : readline.question(`Atencao: Apos a exclusao, nao tera como voltar atras, digite 1 
+  Caso queira cancelar essa acao aperte enter`);
+  resposta();
+  console.clear();
+  
+ 
+  console.log("Dê enter para voltar ao MENU");
   readline.question();
   console.clear();
 }
