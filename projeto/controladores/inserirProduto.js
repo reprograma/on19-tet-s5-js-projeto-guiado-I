@@ -10,20 +10,20 @@ const inserirProduto = () => {
   console.log("Id do novo produto: " + incrementalId);
   incrementalId++ // cada vez em que inseri um novo produto, o Id será gerado segundo a ordem numérica
 
-  console.log("Nome do produto");
+  console.log("Nome do produto :");
   const NomeProduto = readline.question();
 
   
-  console.log("Preço");
+  console.log("Preço :");
   const precoProduto = readline.question();
 
-  console.log("Quantidade");
+  console.log("Quantidade :");
   const QtdProduto = readline.question();
 
-  console.log("Marca");
+  console.log("Marca :");
   const MarcaProduto = readline.question();
 
-  console.log("Fornecedor");
+  console.log("Fornecedor :");
   const fornProduto = readline.question();
 
   //criando um objeto
@@ -36,8 +36,8 @@ const inserirProduto = () => {
     fornecedor: fornProduto,
     }
 
-    ////database.push(novoProduto); 
-    console.table(novoProduto);
+    database.push(novoProduto); 
+    console.table(database);
   
 
   console.log("Dê enter para voltar");

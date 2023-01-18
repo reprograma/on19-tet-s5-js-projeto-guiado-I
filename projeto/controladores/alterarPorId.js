@@ -1,7 +1,8 @@
-// Pergunte o id do produto
-// encontre o produto
-// Pergunte cada campo para o usuário, exceto o id
-// altere o produto selecionado
+/* Pergunte o id do produto
+-encontre o produto
+-Pergunte cada campo para o usuário, exceto o id
+-altere o produto selecionado
+*/
 
 const readline = require("readline-sync");
 const { database } = require("../database") //base de dados, contém informações utéis

@@ -16,7 +16,6 @@ const listarProduto = database.map(function(listar){   //percorre a database. O 
   }
 });
   console.table(listarProduto); //gera uma tabela com o que foi definido na array "ListarProduto"
-  
  
   console.log("Dê enter para voltar");
   readline.question();

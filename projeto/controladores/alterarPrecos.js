@@ -17,7 +17,7 @@ const alterarPrecos = () => {
   console.log("Deseja realmente fazer isso? [1-sim ou 2-não]");
   const condicao = readline.question();
 
-  if  (condicao==='1') {
+  if  (condicao ==='1') {
     for(let index = 0; index < database.length; index++){
       const percentual = +(database[index].preco*(1+ +porcentual/100).toFixed(2))
       database[index].preco = percentual
